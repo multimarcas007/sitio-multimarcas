@@ -1,0 +1,693 @@
+/* ================================================================
+   HOJA DE ESTILOS PRINCIPAL
+   Servicio Técnico Especializado Multimarcas
+   Enfoque: mobile-first, limpio y profesional
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   VARIABLES DE COLOR (paleta profesional que transmite confianza)
+   ---------------------------------------------------------------- */
+:root {
+    --azul-profundo: #0A3D62;   /* Color principal: confianza y tecnología */
+    --azul-brillante: #1976D2;  /* Acentos y botones de acción */
+    --verde-whatsapp: #25D366;  /* Botón de contacto directo */
+    --verde-whatsapp-oscuro: #1DA851;
+    --gris-claro: #F5F7FA;      /* Fondos de secciones */
+    --gris-medio: #E1E8ED;      /* Bordes y separadores */
+    --gris-oscuro: #2C3E50;     /* Textos */
+    --gris-texto: #5A6C7D;      /* Textos secundarios */
+    --blanco: #FFFFFF;
+
+    --sombra-suave: 0 4px 20px rgba(10, 61, 98, 0.08);
+    --sombra-media: 0 8px 30px rgba(10, 61, 98, 0.15);
+    --radio-borde: 12px;
+    --transicion: all 0.3s ease;
+}
+
+/* ----------------------------------------------------------------
+   RESET Y ESTILOS BASE
+   ---------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en el menú */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--gris-oscuro);
+    line-height: 1.6;
+    background-color: var(--blanco);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.2;
+}
+
+/* Contenedor centrado reutilizable para limitar el ancho del contenido */
+.contenedor {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ----------------------------------------------------------------
+   BOTONES REUTILIZABLES
+   ---------------------------------------------------------------- */
+.boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border: none;
+    border-radius: var(--radio-borde);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transicion);
+}
+
+.boton-whatsapp {
+    background-color: var(--verde-whatsapp);
+    color: var(--blanco);
+}
+
+.boton-whatsapp:hover {
+    background-color: var(--verde-whatsapp-oscuro);
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-media);
+}
+
+.boton-secundario {
+    background-color: var(--blanco);
+    color: var(--azul-profundo);
+    border: 2px solid var(--azul-profundo);
+}
+
+.boton-secundario:hover {
+    background-color: var(--azul-profundo);
+    color: var(--blanco);
+    transform: translateY(-2px);
+}
+
+.boton-grande {
+    width: 100%;
+    padding: 16px;
+    font-size: 1.05rem;
+}
+
+/* ----------------------------------------------------------------
+   ENCABEZADO Y BARRA DE NAVEGACIÓN
+   ---------------------------------------------------------------- */
+.encabezado {
+    position: sticky; /* La barra permanece visible al desplazar */
+    top: 0;
+    background-color: var(--blanco);
+    box-shadow: var(--sombra-suave);
+    z-index: 1000;
+}
+
+.barra-navegacion {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    color: var(--azul-profundo);
+}
+
+.logo-icono {
+    font-size: 1.5rem;
+}
+
+.logo-texto strong {
+    color: var(--azul-brillante);
+}
+
+.menu-navegacion {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+}
+
+.menu-navegacion a {
+    text-decoration: none;
+    color: var(--gris-oscuro);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transicion);
+}
+
+.menu-navegacion a:hover {
+    color: var(--azul-brillante);
+}
+
+.boton-nav-whatsapp {
+    background-color: var(--verde-whatsapp);
+    color: var(--blanco) !important;
+    padding: 8px 18px;
+    border-radius: var(--radio-borde);
+}
+
+.boton-nav-whatsapp:hover {
+    background-color: var(--verde-whatsapp-oscuro);
+}
+
+/* Botón hamburguesa: oculto en escritorio, visible en móvil */
+.menu-hamburguesa {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.menu-hamburguesa span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background-color: var(--azul-profundo);
+    border-radius: 2px;
+    transition: var(--transicion);
+}
+
+/* ----------------------------------------------------------------
+   SECCIÓN HÉROE
+   ---------------------------------------------------------------- */
+.heroe {
+    /* Degradado azul que transmite profesionalismo */
+    background: linear-gradient(135deg, var(--azul-profundo) 0%, var(--azul-brillante) 100%);
+    color: var(--blanco);
+    padding: 70px 20px 80px;
+    text-align: center;
+}
+
+.heroe-contenido {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.heroe-etiqueta {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.heroe-titulo {
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.heroe-subtitulo {
+    font-size: 1.15rem;
+    margin-bottom: 32px;
+    opacity: 0.95;
+}
+
+.heroe-botones {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+}
+
+/* Indicadores rápidos de confianza bajo los botones */
+.heroe-indicadores {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.indicador {
+    display: flex;
+    flex-direction: column;
+}
+
+.indicador strong {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.indicador span {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* ----------------------------------------------------------------
+   TÍTULOS DE SECCIÓN (reutilizables)
+   ---------------------------------------------------------------- */
+.seccion-titulo {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--azul-profundo);
+    margin-bottom: 8px;
+}
+
+.seccion-subtitulo {
+    text-align: center;
+    color: var(--gris-texto);
+    font-size: 1.1rem;
+    margin-bottom: 48px;
+}
+
+/* ----------------------------------------------------------------
+   SECCIÓN SERVICIOS
+   ---------------------------------------------------------------- */
+.servicios {
+    padding: 80px 0;
+}
+
+.grilla-servicios {
+    display: grid;
+    /* Grilla responsive: se adapta automáticamente al ancho disponible */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.tarjeta-servicio {
+    background-color: var(--blanco);
+    border: 1px solid var(--gris-medio);
+    border-radius: var(--radio-borde);
+    padding: 32px 24px;
+    text-align: center;
+    transition: var(--transicion);
+}
+
+.tarjeta-servicio:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--sombra-media);
+    border-color: var(--azul-brillante);
+}
+
+.tarjeta-icono {
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+
+.tarjeta-servicio h3 {
+    color: var(--azul-profundo);
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.tarjeta-servicio p {
+    color: var(--gris-texto);
+    font-size: 0.95rem;
+}
+
+/* Tarjeta destacada (servicio a domicilio) con fondo diferenciado */
+.tarjeta-destacada {
+    background: linear-gradient(135deg, var(--azul-profundo) 0%, var(--azul-brillante) 100%);
+    border: none;
+}
+
+.tarjeta-destacada h3 {
+    color: var(--blanco);
+}
+
+.tarjeta-destacada p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ----------------------------------------------------------------
+   SECCIÓN MARCAS
+   ---------------------------------------------------------------- */
+.marcas {
+    padding: 80px 0;
+    background-color: var(--gris-claro);
+}
+
+.grilla-marcas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+.marca {
+    background-color: var(--blanco);
+    padding: 14px 28px;
+    border-radius: var(--radio-borde);
+    font-weight: 600;
+    color: var(--azul-profundo);
+    box-shadow: var(--sombra-suave);
+    transition: var(--transicion);
+}
+
+.marca:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-media);
+}
+
+.marca-extra {
+    background-color: var(--azul-brillante);
+    color: var(--blanco);
+}
+
+/* ----------------------------------------------------------------
+   SECCIÓN ¿POR QUÉ ELEGIRNOS?
+   ---------------------------------------------------------------- */
+.porque-elegirnos {
+    padding: 80px 0;
+}
+
+.grilla-ventajas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+}
+
+.ventaja {
+    padding: 28px;
+    border-radius: var(--radio-borde);
+    background-color: var(--gris-claro);
+    transition: var(--transicion);
+}
+
+.ventaja:hover {
+    background-color: var(--blanco);
+    box-shadow: var(--sombra-media);
+}
+
+.ventaja-icono {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+}
+
+.ventaja h3 {
+    color: var(--azul-profundo);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.ventaja p {
+    color: var(--gris-texto);
+    font-size: 0.95rem;
+}
+
+/* ----------------------------------------------------------------
+   SECCIÓN CONTACTO
+   ---------------------------------------------------------------- */
+.contacto {
+    padding: 80px 0;
+    background-color: var(--gris-claro);
+}
+
+.contacto-grilla {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.contacto-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.contacto-icono {
+    font-size: 1.8rem;
+}
+
+.contacto-item strong {
+    display: block;
+    color: var(--azul-profundo);
+    margin-bottom: 4px;
+}
+
+.contacto-item a,
+.contacto-item p {
+    color: var(--gris-texto);
+    text-decoration: none;
+}
+
+.contacto-item a:hover {
+    color: var(--azul-brillante);
+}
+
+/* Formulario de contacto */
+.contacto-formulario {
+    background-color: var(--blanco);
+    padding: 32px;
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-suave);
+}
+
+.contacto-formulario h3 {
+    color: var(--azul-profundo);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.campo {
+    margin-bottom: 18px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--gris-oscuro);
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--gris-medio);
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    transition: var(--transicion);
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: var(--azul-brillante);
+    box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+}
+
+.campo textarea {
+    resize: vertical;
+}
+
+/* ----------------------------------------------------------------
+   PIE DE PÁGINA
+   ---------------------------------------------------------------- */
+.pie-pagina {
+    background-color: var(--azul-profundo);
+    color: var(--blanco);
+    padding: 60px 0 20px;
+}
+
+.pie-contenido {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.logo-pie {
+    color: var(--blanco);
+    margin-bottom: 16px;
+}
+
+.logo-pie .logo-texto strong {
+    color: #7FB3E8;
+}
+
+.pie-columna p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+}
+
+.pie-columna h4 {
+    margin-bottom: 16px;
+    font-size: 1.1rem;
+}
+
+.pie-columna ul {
+    list-style: none;
+}
+
+.pie-columna ul li {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.pie-copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.pie-copyright p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+/* ----------------------------------------------------------------
+   BOTÓN FLOTANTE DE WHATSAPP
+   ---------------------------------------------------------------- */
+.whatsapp-flotante {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--verde-whatsapp);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.5);
+    z-index: 999;
+    text-decoration: none;
+    /* Animación de pulso para llamar la atención */
+    animation: pulso 2s infinite;
+    transition: var(--transicion);
+}
+
+.whatsapp-flotante:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-icono {
+    font-size: 1.8rem;
+}
+
+/* Animación de pulso del botón flotante */
+@keyframes pulso {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* ================================================================
+   DISEÑO RESPONSIVE (MÓVIL)
+   Enfoque mobile-first: aquí adaptamos para pantallas pequeñas
+   ================================================================ */
+@media (max-width: 768px) {
+    /* Mostrar el botón hamburguesa y ocultar el menú horizontal */
+    .menu-hamburguesa {
+        display: flex;
+    }
+
+    .menu-navegacion {
+        position: fixed;
+        top: 64px;
+        right: -100%; /* Oculto fuera de la pantalla por defecto */
+        flex-direction: column;
+        background-color: var(--blanco);
+        width: 70%;
+        height: calc(100vh - 64px);
+        padding: 32px 24px;
+        gap: 20px;
+        box-shadow: var(--sombra-media);
+        transition: right 0.3s ease;
+    }
+
+    /* Clase que se activa con JavaScript para mostrar el menú */
+    .menu-navegacion.activo {
+        right: 0;
+    }
+
+    .heroe-titulo {
+        font-size: 1.8rem;
+    }
+
+    .heroe-subtitulo {
+        font-size: 1rem;
+    }
+
+    .heroe-botones {
+        flex-direction: column;
+    }
+
+    .heroe-botones .boton {
+        width: 100%;
+    }
+
+    .heroe-indicadores {
+        gap: 24px;
+    }
+
+    .indicador strong {
+        font-size: 1.6rem;
+    }
+
+    .seccion-titulo {
+        font-size: 1.6rem;
+    }
+
+    /* El contacto pasa a una sola columna en móvil */
+    .contacto-grilla {
+        grid-template-columns: 1fr;
+    }
+
+    /* El pie de página se apila verticalmente */
+    .pie-contenido {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        text-align: center;
+    }
+
+    .logo-pie {
+        justify-content: center;
+    }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 400px) {
+    .logo-texto {
+        font-size: 0.9rem;
+    }
+
+    .heroe-titulo {
+        font-size: 1.6rem;
+    }
+}
