@@ -39,6 +39,8 @@
         "@type": "LocalBusiness",
         "name": "Servicio Técnico Especializado Multimarcas",
         "description": "Reparación a domicilio de neveras, lavadoras, secadoras, calentadores y estufas de todas las marcas.",
+        "image": "https://multimarcas007.github.io/sitio-multimarcas/img/portada.png",
+        "logo": "https://multimarcas007.github.io/sitio-multimarcas/img/logo.png",
         "telephone": "+573102996975",
         "areaServed": {
             "@type": "Place",
@@ -57,7 +59,8 @@
     <header class="encabezado" id="inicio">
         <nav class="barra-navegacion">
             <div class="logo">
-                <span class="logo-icono">🔧</span>
+                <!-- Logo real del negocio -->
+                <img src="img/logo.png" alt="Logo Servicio Técnico Especializado Multimarcas" class="logo-imagen">
                 <span class="logo-texto">Servicio Técnico <strong>Multimarcas</strong></span>
             </div>
 
@@ -83,6 +86,8 @@
          SECCIÓN HÉROE: primer impacto visual con llamada a la acción
          ============================================================ -->
     <section class="heroe">
+        <!-- Capa oscura sobre la imagen de fondo para que el texto sea legible -->
+        <div class="heroe-overlay"></div>
         <div class="heroe-contenido">
             <p class="heroe-etiqueta">✓ Más de 15 años de experiencia</p>
             <h1 class="heroe-titulo">Reparación de Electrodomésticos a Domicilio en Medellín</h1>
@@ -176,18 +181,9 @@
             <h2 class="seccion-titulo">Atendemos Todas las Marcas</h2>
             <p class="seccion-subtitulo">Técnicos especializados en las principales marcas del mercado</p>
 
-            <div class="grilla-marcas">
-                <span class="marca">Haceb</span>
-                <span class="marca">LG</span>
-                <span class="marca">Bosch</span>
-                <span class="marca">Samsung</span>
-                <span class="marca">Mabe</span>
-                <span class="marca">Challenger</span>
-                <span class="marca">Whirlpool</span>
-                <span class="marca">General Electric</span>
-                <span class="marca">Kalley</span>
-                <span class="marca">Electrolux</span>
-                <span class="marca marca-extra">Y muchas más...</span>
+            <!-- Imagen con los logos reales de todas las marcas que atendemos -->
+            <div class="contenedor-marcas-imagen">
+                <img src="img/marcas.png" alt="Marcas que reparamos: Haceb, Bosch, Rheem, Whirlpool, Challenger, Samsung, LG, Kalley, Frigidaire, General Electric, Mabe, Electrolux, Junkers y más" class="marcas-imagen">
             </div>
         </div>
     </section>
@@ -325,7 +321,8 @@
             <div class="pie-contenido">
                 <div class="pie-columna">
                     <div class="logo logo-pie">
-                        <span class="logo-icono">🔧</span>
+                        <!-- Logo real del negocio en el pie de página -->
+                        <img src="img/logo.png" alt="Logo Servicio Técnico Especializado Multimarcas" class="logo-imagen logo-imagen-pie">
                         <span class="logo-texto">Servicio Técnico <strong>Multimarcas</strong></span>
                     </div>
                     <p>Reparación profesional de electrodomésticos a domicilio en Medellín y el Valle de Aburrá.</p>

@@ -139,6 +139,22 @@ h1, h2, h3, h4 {
     font-size: 1.5rem;
 }
 
+/* Logo real del negocio (imagen) en la barra de navegación */
+.logo-imagen {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Logo en el pie de página (fondo azul): un poco más grande */
+.logo-imagen-pie {
+    height: 56px;
+    /* Fondo blanco circular sutil para que el logo azul resalte sobre el pie oscuro */
+    background-color: var(--blanco);
+    border-radius: 50%;
+    padding: 4px;
+}
+
 .logo-texto strong {
     color: var(--azul-brillante);
 }
@@ -197,16 +213,32 @@ h1, h2, h3, h4 {
    SECCIÓN HÉROE
    ---------------------------------------------------------------- */
 .heroe {
-    /* Degradado azul que transmite profesionalismo */
-    background: linear-gradient(135deg, var(--azul-profundo) 0%, var(--azul-brillante) 100%);
+    /* Imagen real de fondo (electrodomésticos en cocina moderna) */
+    background-image: url('../img/portada.png');
+    background-size: cover;      /* La imagen cubre toda la sección */
+    background-position: center; /* Centrada para que se vea lo importante */
     color: var(--blanco);
     padding: 70px 20px 80px;
     text-align: center;
+    position: relative; /* Necesario para posicionar la capa oscura encima */
+}
+
+/* Capa oscura azulada sobre la imagen: hace que el texto blanco sea legible */
+.heroe-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(10, 61, 98, 0.88) 0%, rgba(25, 118, 210, 0.82) 100%);
+    z-index: 1;
 }
 
 .heroe-contenido {
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2; /* El contenido va por encima de la capa oscura */
 }
 
 .heroe-etiqueta {
@@ -348,31 +380,20 @@ h1, h2, h3, h4 {
     background-color: var(--gris-claro);
 }
 
-.grilla-marcas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
-}
-
-.marca {
+/* Contenedor de la imagen con los logos reales de las marcas */
+.contenedor-marcas-imagen {
     background-color: var(--blanco);
-    padding: 14px 28px;
     border-radius: var(--radio-borde);
-    font-weight: 600;
-    color: var(--azul-profundo);
+    padding: 32px;
     box-shadow: var(--sombra-suave);
-    transition: var(--transicion);
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.marca:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--sombra-media);
-}
-
-.marca-extra {
-    background-color: var(--azul-brillante);
-    color: var(--blanco);
+.marcas-imagen {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* ----------------------------------------------------------------
@@ -685,6 +706,10 @@ h1, h2, h3, h4 {
 @media (max-width: 400px) {
     .logo-texto {
         font-size: 0.9rem;
+    }
+
+    .logo-imagen {
+        height: 40px;
     }
 
     .heroe-titulo {

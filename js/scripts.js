@@ -66,7 +66,7 @@ if (formularioContacto) {
    dando una sensación más moderna y profesional.
    ---------------------------------------------------------------- */
 const elementosAnimados = document.querySelectorAll(
-    '.tarjeta-servicio, .ventaja, .marca'
+    '.tarjeta-servicio, .ventaja'
 );
 
 // IntersectionObserver detecta cuándo un elemento entra en el viewport
