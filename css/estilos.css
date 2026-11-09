@@ -141,14 +141,19 @@ h1, h2, h3, h4 {
 
 /* Logo real del negocio (imagen) en la barra de navegación */
 .logo-imagen {
-    height: 48px;
-    width: auto;
+    max-height: 55px;   /* Límite de altura para que no crezca de más */
+    height: auto;
+    width: auto;        /* El ancho se ajusta proporcionalmente (sin deformar) */
+    max-width: 55px;    /* El logo es cuadrado: limitamos también el ancho */
     object-fit: contain;
+    display: block;
+    flex-shrink: 0;     /* Evita que el flexbox lo estire o encoja de forma rara */
 }
 
 /* Logo en el pie de página (fondo azul): un poco más grande */
 .logo-imagen-pie {
-    height: 56px;
+    max-height: 64px;   /* Permitimos un poco más de tamaño que en la barra */
+    max-width: 64px;
     /* Fondo blanco circular sutil para que el logo azul resalte sobre el pie oscuro */
     background-color: var(--blanco);
     border-radius: 50%;
@@ -709,7 +714,8 @@ h1, h2, h3, h4 {
     }
 
     .logo-imagen {
-        height: 40px;
+        max-height: 44px;
+        max-width: 44px;
     }
 
     .heroe-titulo {
