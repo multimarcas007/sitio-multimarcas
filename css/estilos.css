@@ -347,9 +347,23 @@ h1, h2, h3, h4 {
     border-color: var(--azul-brillante);
 }
 
+/* Contenedor del ícono SVG: círculo de fondo azul claro, centrado */
 .tarjeta-icono {
-    font-size: 3rem;
-    margin-bottom: 16px;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;        /* Centrado horizontal + separación inferior */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(25, 118, 210, 0.1); /* Azul corporativo muy suave */
+    border-radius: 50%;
+    color: var(--azul-brillante); /* Color que heredan los SVG vía currentColor */
+}
+
+/* Tamaño uniforme de todos los íconos SVG */
+.tarjeta-icono svg {
+    width: 42px;
+    height: 42px;
 }
 
 .tarjeta-servicio h3 {
@@ -375,6 +389,13 @@ h1, h2, h3, h4 {
 
 .tarjeta-destacada p {
     color: rgba(255, 255, 255, 0.9);
+}
+
+/* En la tarjeta destacada (fondo azul oscuro) invertimos los colores del ícono:
+   fondo blanco translúcido e ícono blanco para que resalte */
+.tarjeta-destacada .tarjeta-icono {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--blanco);
 }
 
 /* ----------------------------------------------------------------
